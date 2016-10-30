@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "resources/js/react.js";
 
 export const foo = (a, b) => {
   return a + b;

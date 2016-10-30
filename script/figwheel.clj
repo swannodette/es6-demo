@@ -21,6 +21,7 @@
      :figwheel {}
      :source-paths ["src/cljs" "resources/js"]
      :compiler {:main 'es6-demo.core
+                :asset-path "/js/out"
                 :output-to "resources/public/js/main.js"
                 :output-dir "resources/public/js/out"
                 :parallel-build true
