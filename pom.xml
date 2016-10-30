@@ -14,7 +14,7 @@
         </license>
     </licenses>
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>src/cljs</sourceDirectory>
         <resources>
             <resource>
                 <directory>resources</directory>
