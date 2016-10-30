@@ -1,5 +1,8 @@
-(require '[figwheel-sidecar.repl :as r]
-         '[figwheel-sidecar.repl-api :as ra])
+(require '[clojure.java.io :as io]
+         '[figwheel-sidecar.repl :as r]
+         '[figwheel-sidecar.repl-api :as ra]
+         '[cljs.closure :refer [js-transforms]])
+(import 'javax.script.ScriptEngineManager)
 
 (defmethod js-transforms :jsx [ijs opts]
   (let [engine (doto (.getEngineByName (ScriptEngineManager.) "nashorn")
@@ -9,12 +12,12 @@
       {:source (.eval engine "simple.transform(originalCode, {react: true, es6module: true}).code")})))
 
 (ra/start-figwheel!
-  {:figwheel-options {}
+  {:figwheel-options {:validate-config false}
    :build-ids ["dev"]
    :all-builds
    [{:id "dev"
      :figwheel {}
-     :source-paths ["src/main" "resources/js"]
+     :source-paths ["src/cljs" "resources/js"]
      :compiler {:main 'es6-demo.core
                 :output-to "resources/public/main.js"
                 :output-dir "resources/public/out"
