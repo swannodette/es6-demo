@@ -12,7 +12,9 @@
       {:source (.eval engine "simple.transform(originalCode, {react: true, es6module: true}).code")})))
 
 (ra/start-figwheel!
-  {:figwheel-options {:validate-config false}
+  {:figwheel-options
+   {:validate-config false
+    :css-dirs ["src/resources/public/css"]}
    :build-ids ["dev"]
    :all-builds
    [{:id "dev"
