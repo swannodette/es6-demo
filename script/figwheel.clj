@@ -3,10 +3,10 @@
 
 (defmethod js-transforms :jsx [ijs opts]
   (let [engine (doto (.getEngineByName (ScriptEngineManager.) "nashorn")
-                 (.eval (io/reader (io/file "jstransform-simple.bundle.js")))
+                 (.eval (io/reader (io/file "resources/js/jstransform-simple.bundle.js")))
                  (.put "originalCode" (:source ijs)))]
-    (assoc ijs :source
-               (.eval engine (str "simple.transform(originalCode, {react: true, es6module: true}).code")))))
+    (merge ijs
+      {:source (.eval engine "simple.transform(originalCode, {react: true, es6module: true}).code")})))
 
 (ra/start-figwheel!
   {:figwheel-options {}
