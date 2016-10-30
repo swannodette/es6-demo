@@ -31,3 +31,7 @@
 (React/render
   (React/createElement Container)
   (.getElementById js/document "app"))
+
+(comment
+  (Components/vec #js [1 2 3])
+  )
