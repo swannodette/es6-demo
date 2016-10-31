@@ -33,7 +33,10 @@
                                {:file "src/js/Components.js"
                                 :provides ["Components"]
                                 :module-type :es6
-                                :preprocess :jsx}]
+                                :preprocess :jsx}
+                               {:file "src/js/NodeStuff.js"
+                                :provides ["NodeStuff"]
+                                :module-type :commonjs}]
                 :closure-warnings {:non-standard-jsdoc :off}}}]})
 
 (ra/cljs-repl)

@@ -1,5 +1,9 @@
 # Running It
 
+(Does Not Work Yet)
+
+Build closure-compiler from master with the Node resolution patch applied. 
+
 Checkout ClojureScript master, switch into the repo and run:
 
 ```
