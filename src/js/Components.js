@@ -1,19 +1,19 @@
 import * as React from "resources/js/react.js";
 goog.require("cljs.core");
 
-export const foo = (a, b) => {
+export var foo = (a, b) => {
   return a + b;
 };
 
-export const bar = (c, d) => {
+export var bar = (c, d) => {
   return c * d;
 };
 
-export const vec = (xs) => {
+export var vec = (xs) => {
   return cljs.core.into(cljs.core.vector(), xs);
 };
 
-export class Circle extends React.Component {
+export var Circle = class extends React.Component {
   render() {
     return(
       <svg width="200px" height="200px" className="center">
