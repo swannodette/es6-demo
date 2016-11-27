@@ -13,13 +13,12 @@
 
 (ra/start-figwheel!
   {:figwheel-options
-   {:validate-config false
-    :css-dirs ["src/resources/public/css"]}
+   {:css-dirs ["src/resources/public/css"]}
    :build-ids ["dev"]
    :all-builds
    [{:id "dev"
      :figwheel {}
-     :source-paths ["src/cljs" "resources/js"]
+     :source-paths ["src/cljs"]
      :compiler {:main 'es6-demo.core
                 :asset-path "/js/out"
                 :output-to "resources/public/js/main.js"

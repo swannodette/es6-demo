@@ -15,3 +15,10 @@ From *this* project's repo run:
 mvn -q dependency:build-classpath -Dmdep.outputFile=classpath.txt
 rlwrap java -cp `cat classpath.txt` clojure.main ./script/figwheel.clj
 ```
+
+Serve the resources/public dir statically
+
+```
+cd resources/public
+python -m SimpleHTTPServer 8000
+```
