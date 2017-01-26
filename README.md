@@ -2,7 +2,7 @@
 
 (Does Not Work Yet)
 
-Build closure-compiler from master with the Node resolution patch applied. 
+Build closure-compiler from master with the Node resolution patch applied.
 
 Checkout ClojureScript master, switch into the repo and run:
 
@@ -17,5 +17,5 @@ From *this* project's repo run:
 
 ```
 mvn -q dependency:build-classpath -Dmdep.outputFile=classpath.txt
-rlwrap java -cp `cat classpath.txt` clojure.main ./script/figwheel.clj
+java -cp `cat classpath.txt` clojure.main ./script/build.clj
 ```
