@@ -2,7 +2,8 @@
          '[cljs.build.api :as b])
 
 (b/build (b/inputs "src/cljs" "src/js")
-  {:main 'es6-demo.core
+  {:optimizations :none
+   :main 'es6-demo.core
    :output-to "out/main.js"
    :output-dir "out"
    :verbose true
