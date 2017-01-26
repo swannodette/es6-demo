@@ -4,6 +4,6 @@ function foo(a, b) {
     return a + b;
 }
 
-modules.exports = {
+module.exports = {
     foo: foo
 };
