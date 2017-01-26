@@ -1,4 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-resources/public/js/out
+out/*
 *.iml
+figwheel_server.log
+classpath.txt

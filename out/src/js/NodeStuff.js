@@ -1,0 +1,1 @@
+goog.require("module$Users$davidnolen$development$clojure$es6_demo$node_modules$object_assign$index");var objectAssign=module$Users$davidnolen$development$clojure$es6_demo$node_modules$object_assign$index;function foo(a,b){return a+b}modules.exports={foo:foo}
