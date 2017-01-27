@@ -1,5 +1,14 @@
 (require '[clojure.java.io :as io]
-         '[cljs.build.api :as b])
+         '[cljs.build.api :as b]
+         '[clojure.data.json :as json])
+
+(defn node-modules []
+  (letfn [(->lib [{:strs [file]}] {:file file :module-type :commonjs})]
+    (vec
+      (map ->lib
+        (json/read-str (slurp (io/file "deps.json")))))))
+
+(println (node-modules))
 
 (b/build (b/inputs "src")
   {:optimizations :none
@@ -7,9 +16,10 @@
    :output-to "out/main.js"
    :output-dir "out"
    :verbose true
-   :foreign-libs [{:file (.getAbsolutePath (io/file "src/libs/NodeStuff.js"))
-                   :provides ["libs.NodeStuff"]
-                   :module-type :commonjs}
-                  {:file (.getAbsolutePath (io/file "node_modules/object-assign/index.js"))
-                   :module-type :commonjs}]
+   :foreign-libs (into
+                   [{:file (.getAbsolutePath (io/file "src/libs/NodeStuff.js"))
+                     :provides ["libs.NodeStuff"]
+                     :module-type :commonjs}]
+                   (butlast (node-modules)))
+   :closure-module-roots []
    :closure-warnings {:non-standard-jsdoc :off}})
