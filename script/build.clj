@@ -8,8 +8,6 @@
       (map ->lib
         (json/read-str (slurp (io/file "deps.json")))))))
 
-(println (node-modules))
-
 (b/build (b/inputs "src")
   {:optimizations :advanced
    :main 'es6-demo.core
@@ -22,8 +20,7 @@
                      :provides ["libs.NodeStuff"]
                      :module-type :commonjs}]
                    (butlast (node-modules)))
-   :pseudo-names true
-   :externs ["process.js"]
+   :externs ["process.js" "externs.js"]
    :closure-module-roots []
    :closure-warnings {:non-standard-jsdoc :off}})
 

@@ -79,6 +79,16 @@
             <artifactId>react</artifactId>
             <version>15.4.2-0</version>
         </dependency>
+        <dependency>
+            <groupId>cljsjs</groupId>
+            <artifactId>react-dom</artifactId>
+            <version>15.4.2-0</version>
+        </dependency>
+        <dependency>
+            <groupId>cljsjs</groupId>
+            <artifactId>react-dom-server</artifactId>
+            <version>15.4.2-0</version>
+        </dependency>
         <!--
         <dependency>
             <groupId>com.google.javascript</groupId>
