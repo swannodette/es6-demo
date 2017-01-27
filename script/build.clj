@@ -11,9 +11,10 @@
 (println (node-modules))
 
 (b/build (b/inputs "src")
-  {:optimizations :none
+  {:optimizations :advanced
    :main 'es6-demo.core
-   :output-to "out/main.js"
+   :target :nodejs
+   :output-to "main.js"
    :output-dir "out"
    :verbose true
    :foreign-libs (into
@@ -21,5 +22,9 @@
                      :provides ["libs.NodeStuff"]
                      :module-type :commonjs}]
                    (butlast (node-modules)))
+   :pseudo-names true
+   :externs ["process.js"]
    :closure-module-roots []
    :closure-warnings {:non-standard-jsdoc :off}})
+
+(System/exit 0)

@@ -54,7 +54,7 @@
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojurescript</artifactId>
-            <version>1.9.435</version>
+            <version>1.9.436</version>
             <classifier>aot</classifier>
             <exclusions>
                 <exclusion>
@@ -73,6 +73,11 @@
             <groupId>org.clojure</groupId>
             <artifactId>data.json</artifactId>
             <version>0.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>cljsjs</groupId>
+            <artifactId>react</artifactId>
+            <version>15.4.2-0</version>
         </dependency>
         <!--
         <dependency>
